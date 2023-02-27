@@ -1,0 +1,10 @@
+---
+- name: Intro to Ansible Playbooks
+  hosts: web
+
+  tasks:
+  - name: Copy file hosts with permissions
+    ansible.builtin.copy:
+      src: ./apache.yml
+      dest: /root/
+      mode: '0644'

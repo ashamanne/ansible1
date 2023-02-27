@@ -1,0 +1,49 @@
+    1  ifconfig
+    2  yum install update
+    3  ifup enpos3
+    4  ifconfig
+    5  yum install net-tools
+    6  yum install net_tools
+    7  ping google.com
+    8  ip addr show
+    9  ifup enpos3
+   10  ifup enp0s3
+   11  ip addr show
+   12  yum install net-tools -y
+   13  ifconfig
+   14  cd /etc/sysconfig/network-scripts/
+   15  ls -ltr
+   16  vi ifcfg-enp0s3 
+   17  init 0
+   18  ifconfig
+   19  ifconfig
+   20  cd /etc/sysconfig/network-scripts/
+   21  ls -ltr
+   22  init 0
+   23  hostname master
+   24  vi /etc/hostname 
+   25  init 6
+   26  ssh-keygen
+   27  vi /etc/hosts
+   28  ping master
+   29  ping vm192
+   30  ssh-copy-id vm192
+   31  ssh vm192
+   32  scp /etc/hosts vm192:/etc/hosts
+   33  ssh vm192
+   34  yum install epel-release
+   35  yum install ansible
+   36  mkdir ansible
+   37  cd ansible/
+   38  vi hosts
+   39  ansible -i hosts -m ping all
+   40  ssh-copy-id master
+   41  ansible -i hosts -m ping all
+   42  ansible vm192 -i hosts -m ping 
+   43  ansible web -i hosts -m file -a 'path=/var/tmp/asha_test.txt state=touch'
+   44  ssh vm192 'ls -l /var/tmp/asha_test.txt'
+   45  ssh vm192 'echo asha > /var/tmp/asha_test.txt'
+   46  ssh vm192 'cat /var/tmp/asha_test.txt'
+   47  history
+   48  cp history asha.txt
+   49  history >> asha.txt
